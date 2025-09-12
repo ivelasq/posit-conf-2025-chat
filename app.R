@@ -55,7 +55,7 @@ ui <- bslib::page_sidebar(
 
 server <- function(input, output, session) {
   chat <- ellmer::chat_openai(
-    model = "gpt-4.1-mini",
+    model = "gpt-5-mini",
     system_prompt = system_prompt,
     api_args = list(temperature = 0.2)
   )
