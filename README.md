@@ -12,8 +12,6 @@ For questions or contributions, please open an issue or submit a pull request.
 
 ## Acknowledgments
 
-# Acknowledgments
-
 I'm grateful to several people who helped make this project better:
 
 **[@LibbyHeeren](https://github.com/LibbyHeeren/)** reviewed the initial version of the app and provided valuable feedback that guided key improvements.
