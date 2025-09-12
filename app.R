@@ -56,8 +56,7 @@ ui <- bslib::page_sidebar(
 server <- function(input, output, session) {
   chat <- ellmer::chat_openai(
     model = "gpt-5-mini",
-    system_prompt = system_prompt,
-    api_args = list(temperature = 0.2)
+    system_prompt = system_prompt
   )
   ragnar_register_tool_retrieve_vss(chat, store, top_k = 10)
 
