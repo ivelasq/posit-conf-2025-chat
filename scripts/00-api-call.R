@@ -99,6 +99,9 @@ extract_session_info <- function(json_input) {
       
       map_dfr(item$participants, function(p) {
         talk_title <- if (!is.null(p$session) && !is.null(p$session[[1]]$title)) p$session[[1]]$title[[1]] else session_title
+        if (item$type == "Keynote" | item$type == "Workshop"){
+          talk_title <- session_title
+        }
         
         tibble(
           session_code = session_code,
