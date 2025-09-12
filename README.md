@@ -12,4 +12,14 @@ For questions or contributions, please open an issue or submit a pull request.
 
 ## Acknowledgments
 
-Thanks for [@LibbyHerran](https://github.com/LibbyHeeren/) for reviewing the app after I first made it and providing valuable feedback. Also, thanks to [@astrowonk](https://github.com/astrowonk/) for helpful tips and reference Python code on how to call the API. Both of your suggestions helped me improve the app significantly.
+# Acknowledgments
+
+I'm grateful to several people who helped make this project better:
+
+**[@LibbyHeeren](https://github.com/LibbyHeeren/)** reviewed the initial version of the app and provided valuable feedback that guided key improvements.
+
+**[@astrowonk](https://github.com/astrowonk/)** shared helpful tips and reference Python code for the API call, which streamlined the development process significantly.
+
+**[@ivelasq](https://github.com/ivelasq)** went above and beyond by publishing a separate instance of the app on Posit Connect using a Posit API key and writing [this excellent blog post](https://posit.co/blog/posit-conf-2025-agenda/) about the project.
+
+Your contributions and support made this project much better than it would have been otherwise. Thank you!
