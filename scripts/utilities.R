@@ -23,7 +23,7 @@ ragnar_register_tool_retrieve_vss <-
         description = glue::glue(
           "Given a string, retrieve the most relevent excerpts from {store_description}."
         ),
-        ellmer::arguments(
+        arguments = list(
           text = ellmer::type_string(
             "The text to find the most relevent matches for."
           ),
