@@ -1,6 +1,7 @@
 library(ragnar)
 library(shiny)
 library(shinychat)
+library(dbplyr)
 
 source("scripts/utilities.R")
 
