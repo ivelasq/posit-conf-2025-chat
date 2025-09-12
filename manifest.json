@@ -803,30 +803,30 @@
       "description": {
         "Package": "ellmer",
         "Title": "Chat with Large Language Models",
-        "Version": "0.2.1",
-        "Authors@R": "c(\n    person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0003-4757-117X\")),\n    person(\"Joe\", \"Cheng\", role = \"aut\"),\n    person(\"Aaron\", \"Jacobs\", role = \"aut\"),\n    person(\"Garrick\", \"Aden-Buie\", , \"garrick@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-7111-0077\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"),\n           comment = c(ROR = \"03wc8by49\"))\n  )",
+        "Version": "0.3.0",
+        "Authors@R": "c(\n    person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0003-4757-117X\")),\n    person(\"Joe\", \"Cheng\", role = \"aut\"),\n    person(\"Aaron\", \"Jacobs\", role = \"aut\"),\n    person(\"Garrick\", \"Aden-Buie\", , \"garrick@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-7111-0077\")),\n    person(\"Barret\", \"Schloerke\", , \"barret@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-9986-114X\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"),\n           comment = c(ROR = \"03wc8by49\"))\n  )",
         "Description": "Chat with large language models from a range of providers\n    including 'Claude' <https://claude.ai>, 'OpenAI'\n    <https://chatgpt.com>, and more. Supports streaming, asynchronous\n    calls, tool calling, and structured data extraction.",
         "License": "MIT + file LICENSE",
         "URL": "https://ellmer.tidyverse.org, https://github.com/tidyverse/ellmer",
         "BugReports": "https://github.com/tidyverse/ellmer/issues",
         "Depends": "R (>= 4.1)",
-        "Imports": "cli, coro (>= 1.1.0), glue, httr2 (>= 1.1.1), jsonlite, later\n(>= 1.4.0), lifecycle, promises (>= 1.3.1), R6, rlang (>=\n1.1.0), S7 (>= 0.2.0)",
-        "Suggests": "base64enc, connectcreds, curl (>= 6.0.1), gargle, gitcreds,\nknitr, magick, openssl, paws.common, rmarkdown, shiny,\nshinychat (>= 0.2.0), testthat (>= 3.0.0), withr",
+        "Imports": "cli, coro (>= 1.1.0), glue, httr2 (>= 1.2.1), jsonlite, later\n(>= 1.4.0), lifecycle, promises (>= 1.3.1), R6, rlang (>=\n1.1.0), S7 (>= 0.2.0)",
+        "Suggests": "connectcreds, curl (>= 6.0.1), gargle, gitcreds, knitr,\nmagick, openssl, paws.common, rmarkdown, shiny, shinychat (>=\n0.2.0), testthat (>= 3.0.0), vcr (>= 2.0.0), withr",
         "VignetteBuilder": "knitr",
         "Config/Needs/website": "tidyverse/tidytemplate, rmarkdown",
         "Config/testthat/edition": "3",
         "Config/testthat/parallel": "true",
-        "Config/testthat/start-first": "test-provider-*",
+        "Config/testthat/start-first": "chat, provider*",
         "Encoding": "UTF-8",
         "RoxygenNote": "7.3.2",
-        "Collate": "'utils-S7.R' 'types.R' 'tools-def.R' 'content.R' 'provider.R'\n'as-json.R' 'batch-chat.R' 'chat-parallel.R'\n'chat-structured.R' 'utils-coro.R' 'chat.R' 'content-image.R'\n'content-pdf.R' 'turns.R' 'content-tools.R' 'deprecated.R'\n'ellmer-package.R' 'httr2.R' 'import-standalone-obj-type.R'\n'import-standalone-purrr.R' 'import-standalone-types-check.R'\n'interpolate.R' 'params.R' 'provider-openai.R'\n'provider-azure.R' 'provider-bedrock.R' 'provider-claude.R'\n'provider-gemini.R' 'provider-cloudflare.R' 'provider-cortex.R'\n'provider-databricks.R' 'provider-deepseek.R'\n'provider-gemini-upload.R' 'provider-github.R'\n'provider-groq.R' 'provider-huggingface.r' 'provider-mistral.R'\n'provider-ollama.R' 'provider-openrouter.R'\n'provider-perplexity.R' 'provider-portkey.R'\n'provider-snowflake.R' 'provider-vllm.R' 'shiny.R' 'tokens.R'\n'tools-def-auto.R' 'utils-callbacks.R' 'utils-cat.R'\n'utils-merge.R' 'utils-prettytime.R' 'utils.R' 'zzz.R'",
+        "Collate": "'utils-S7.R' 'types.R' 'ellmer-package.R' 'tools-def.R'\n'content.R' 'provider.R' 'as-json.R' 'batch-chat.R'\n'chat-structured.R' 'turns.R' 'chat-tools.R' 'utils-coro.R'\n'chat.R' 'content-image.R' 'content-pdf.R' 'content-replay.R'\n'deprecated.R' 'httr2.R' 'import-standalone-obj-type.R'\n'import-standalone-purrr.R' 'import-standalone-types-check.R'\n'interpolate.R' 'live.R' 'parallel-chat.R' 'params.R'\n'provider-anthropic.R' 'provider-any.R' 'provider-aws.R'\n'provider-openai.R' 'provider-azure.R' 'provider-google.R'\n'provider-cloudflare.R' 'provider-databricks.R'\n'provider-deepseek.R' 'provider-github.R'\n'provider-google-upload.R' 'provider-groq.R'\n'provider-huggingface.R' 'provider-mistral.R'\n'provider-ollama.R' 'provider-openrouter.R'\n'provider-perplexity.R' 'provider-portkey.R'\n'provider-snowflake-cortex.R' 'provider-snowflake.R'\n'provider-vllm.R' 'tokens.R' 'tools-def-auto.R'\n'utils-callbacks.R' 'utils-cat.R' 'utils-merge.R'\n'utils-prettytime.R' 'utils.R' 'zzz.R'",
         "NeedsCompilation": "no",
-        "Packaged": "2025-06-03 13:39:44 UTC; hadleywickham",
-        "Author": "Hadley Wickham [aut, cre] (ORCID:\n    <https://orcid.org/0000-0003-4757-117X>),\n  Joe Cheng [aut],\n  Aaron Jacobs [aut],\n  Garrick Aden-Buie [aut] (ORCID:\n    <https://orcid.org/0000-0002-7111-0077>),\n  Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
+        "Packaged": "2025-07-24 19:33:31 UTC; hadleywickham",
+        "Author": "Hadley Wickham [aut, cre] (ORCID:\n    <https://orcid.org/0000-0003-4757-117X>),\n  Joe Cheng [aut],\n  Aaron Jacobs [aut],\n  Garrick Aden-Buie [aut] (ORCID:\n    <https://orcid.org/0000-0002-7111-0077>),\n  Barret Schloerke [aut] (ORCID: <https://orcid.org/0000-0001-9986-114X>),\n  Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
-        "Date/Publication": "2025-06-03 15:00:01 UTC",
-        "Built": "R 4.3.0; ; 2025-09-12 14:26:35 UTC; unix"
+        "Date/Publication": "2025-07-24 23:50:21 UTC",
+        "Built": "R 4.3.3; ; 2025-07-25 03:19:44 UTC; unix"
       }
     },
     "fansi": {
@@ -2844,10 +2844,7 @@
       "checksum": "c013ed00a1147d30661fce86a278f011"
     },
     "data/posit-conf-2025.ragnar.duckdb": {
-      "checksum": "56d058c351c08462c08956985193b1ac"
-    },
-    "data/posit-conf-2025.ragnar.duckdb.wal": {
-      "checksum": "0c21b290cff276bb598b0e25aff9613b"
+      "checksum": "4d5700363a371e7664720fdb9aa6ffca"
     },
     "data/retrieval-date.txt": {
       "checksum": "f092b79aae3410e8e3f008b7babc0ffa"
@@ -2886,10 +2883,10 @@
       "checksum": "b3e4130533c1a54adc5f471ff7263e55"
     },
     "scripts/01-ragnar-store.R": {
-      "checksum": "a6e608f23903bc75deab077ab745f1ac"
+      "checksum": "25c9b2fe14a8f233dd7619cb0660da1c"
     },
     "scripts/02-ellmer-chat.R": {
-      "checksum": "274810024a70a1c7a0fde8e62484c049"
+      "checksum": "26b9a1c9e3597171167e22e2e1a0862e"
     },
     "scripts/utilities.R": {
       "checksum": "055aa8090a46bafe097a4835302a352c"

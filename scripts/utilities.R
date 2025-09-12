@@ -11,7 +11,6 @@ ragnar_register_tool_retrieve_vss <-
     
     chat$register_tool(
       ellmer::tool(
-        .name = glue::glue("rag_retrieve_from_{store@name}"),
         function(text, status_ignore_workshops = status_ignore_workshops) {
           results <- ragnar::ragnar_retrieve_vss(store, text, ...)$text
           # Filter out entries containing 'workshop' if the toggle is on
@@ -20,14 +19,17 @@ ragnar_register_tool_retrieve_vss <-
           }
           stringi::stri_flatten(results, "\n\n---\n\n")
         },
-        glue::glue(
+        name = glue::glue("rag_retrieve_from_{store@name}"),
+        description = glue::glue(
           "Given a string, retrieve the most relevent excerpts from {store_description}."
         ),
-        text = ellmer::type_string(
-          "The text to find the most relevent matches for."
-        ),
-        status_ignore_workshops = ellmer::type_boolean(
-          "Whether to ignore workshops in the results."
+        ellmer::arguments(
+          text = ellmer::type_string(
+            "The text to find the most relevent matches for."
+          ),
+          status_ignore_workshops = ellmer::type_boolean(
+            "Whether to ignore workshops in the results."
+          )  
         )
       )
     )
