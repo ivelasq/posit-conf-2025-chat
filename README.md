@@ -18,6 +18,6 @@ I'm grateful to several people who helped make this project better:
 
 **[@astrowonk](https://github.com/astrowonk/)** shared helpful tips and reference Python code for the API call, which streamlined the development process significantly.
 
-**[@ivelasq](https://github.com/ivelasq)** went above and beyond by publishing a separate instance of the app on Posit Connect using a Posit API key and writing [this excellent blog post](https://posit.co/blog/posit-conf-2025-agenda/) about the project.
+**[@ivelasq](https://github.com/ivelasq)** went above and beyond by publishing a separate instance of the app on Posit Connect Cloud using a Posit API key and writing [this excellent blog post](https://posit.co/blog/posit-conf-2025-agenda/) about the project.
 
 Your contributions and support made this project much better than it would have been otherwise. Thank you!
