@@ -43,3 +43,6 @@ embedding_near_chunks$text[1] |> cat(sep = "\n~~~~~~~~\n")
 
 # embedding_near_chunks <- ragnar_retrieve(store, text)
 # embedding_near_chunks$text[1] |> cat(sep = "\n~~~~~~~~\n")
+
+# Write manifest file for application deployment
+rsconnect::writeManifest(python = "/usr/local/bin/python3")
