@@ -4,6 +4,7 @@ library(chromote)
 library(purrr)
 library(readr)
 library(fs)
+library(lubridate)
 
 # Define the URLs for the conference agenda
 days <- 20250916:20250918
@@ -18,15 +19,21 @@ grab_catalog_results <- function(url) {
   
   # Extract session result
   session_nodes <- page %>%
-    rvest::html_elements(".session-result")
-  
+    rvest::html_elements(".rf-tile")
+
   # Extract grouped info from each session node
   session_info <- purrr::map(session_nodes, function(node) {
+    abstract <- node %>% 
+      rvest::html_elements("p.rf-tile-info.rf-tile-line-two, ul") %>%
+      rvest::html_text2() %>%
+      paste(collapse = "\n")
+    
     list(
-      title    = node %>% rvest::html_element(".catalog-result-title") %>% rvest::html_text2(),
-      abstract = node %>% rvest::html_element(".abstract-component") %>% rvest::html_text2(),
-      speakers = node %>% rvest::html_element(".speakers-component") %>% rvest::html_text2(),
-      time     = node %>% rvest::html_element(".times-component") %>% rvest::html_text2()
+      title    = node %>% rvest::html_element(".rf-tile-title") %>% rvest::html_text2(),
+      abstract = abstract,
+      date     = node %>% rvest::html_element(".session-date") %>% rvest::html_text2(),
+      time     = node %>% rvest::html_element(".session-time") %>% rvest::html_text2(),
+      location = node %>% rvest::html_element(".session-time-in-person") %>% rvest::html_text2()
     )
   })
   
@@ -43,26 +50,18 @@ format_session_as_md <- function(session) {
   abstract <- gsub("\n{2,}", "\n\n", session$abstract)
   abstract <- gsub("\n", "  \n", abstract)
   
-  speakers <- if (!is.na(session$speakers)) {
-    gsub("\n", "  \n", session$speakers)
-  } else {
-    "TBA"
-  }
-  
   # Extract date/time/room from `time` if needed
-  time_clean <- gsub("Add to Schedule\\n", "", session$time)
-  time_lines <- unlist(strsplit(time_clean, "\n"))
+  # time_clean <- gsub("Add to Schedule\\n", "", session$time)
+  # time_lines <- unlist(strsplit(time_clean, "\n"))
+  # time_line <- time_lines[1]
+  time_line <- glue::glue("{session$date} {session$time}")
   
-  time_line <- time_lines[1]
-  room_line <- time_lines[2]
+  room_line <- session$location
   
   glue::glue("
 ## Session Title: {session$title}
 
-**Speakers:** 
-{speakers}
-
-**Time:** {time_line}  
+**Date/Time:** {time_line}  
 **Location:** {room_line}
 
 **Session Info:**  
@@ -90,7 +89,7 @@ readr::write_csv(
 
 info <- fs::file_info(file.path("data", "posit-conf-2025.ragnar.duckdb"))
 
-last_modified_date <- as.Date(info$modification_time)
+last_modified_date <- lubridate::date(info$modification_time)
 
 writeLines(
   as.character(last_modified_date),
